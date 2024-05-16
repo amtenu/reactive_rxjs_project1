@@ -14,11 +14,15 @@ const observable = new Observable((subscriber) => {
     );
   }),
   map((value) => {
-    console.log("3rd average age of the female high scoreres", value);
-    return value.reduce((sum, studentData) => sum + studentData.age, 0);
+    const totalAge = value.reduce(
+      (sum, studentData) => sum + studentData.age,
+      0
+    );
+    return { totalAge, femaleHighScorersCount: value.length };
   }),
-  map((value) => {
-    return value;
+  map(({ totalAge, femaleHighScorersCount }) => {
+    const averageAge = totalAge / femaleHighScorersCount;
+    return Math.floor(averageAge);
   })
 );
 
