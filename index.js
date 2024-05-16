@@ -1,4 +1,5 @@
 const { Observable } = require("rxjs");
+const studentData = require ("./studentData")
 
 const observable = new Observable((subscriber) => {
   subscriber.next(10);
