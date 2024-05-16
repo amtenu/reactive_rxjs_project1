@@ -1,4 +1,4 @@
-export const studentsData = {
+const studentsData = {
   data: [
     {
       name: "John Doe",
@@ -202,3 +202,5 @@ export const studentsData = {
     },
   ],
 };
+
+module.exports = studentsData;
